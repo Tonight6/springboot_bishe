@@ -1,0 +1,63 @@
+<configuration>
+    <!--
+        定义一个属性，%date 表示日期，%thread 表示线程名，%-5level 表示级别从左显示5个字符宽度，%logger{36} 表示 Logger 名字最长36个字符，%msg 表示日志消息，%n 是换行符。
+    -->
+    <property name="LOG_PATTERN" value="%date{HH:mm:ss.SSS} [%thread] === %-5level %logger{36} - %msg%n" />
+    <!--
+        定义一个属性，%d表示日期，%i表示第几个日志，当日志文件装满时会再生成一个日志文件。
+     -->
+    <property name="LOG_HOME" value="D:/Test-biyesheji/log/logback.%d{yyyy-MM-dd}.%i.log"/>
+    <!--
+        appender当class等于ConsoleAppender时用于控制打印台
+     -->
+    <appender name="LOGCONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <!--
+            按照上面配置的LOG_PATTERN格式来打印日志到控制台
+             -->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!--
+        appender当class等于RollingFileAppender时用于控制log文件
+     -->
+    <appender name="LOGFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--
+            rollingPolicy当class等于TimeBasedRollingPolicy时用于控制log文件的相关状态
+         -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--
+            按照上面配置的LOG_HOME路径来保存日志
+             -->
+            <fileNamePattern>${LOG_HOME}</fileNamePattern>
+            <!--
+            日志保存时长为30天
+            -->
+            <maxHistory>30</maxHistory>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <!--
+                单个日志文件的最大容量，超过则新建日志文件
+                 -->
+                <maxFileSize>15MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+        <encoder>
+            <!--
+            按照上面配置的LOG_PATTERN来打印日志到日志文件
+             -->
+            <pattern>${LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <!--
+          logger配置日志级别为INFO   层级关系如图： ERROR,WARN,INFO,DEBUG
+          例如设置INFO后，比INFO低的debug就显示不出来了，等会测试即可知。
+     -->
+    <logger name="org.springframework" level="INFO" />
+    <!--
+          root应用上方写好的LOGCONSOLE和LOGFILE
+     -->
+    <root level="INFO">
+        <appender-ref ref="LOGCONSOLE" />
+        <appender-ref ref="LOGFILE" />
+    </root>
+</configuration>

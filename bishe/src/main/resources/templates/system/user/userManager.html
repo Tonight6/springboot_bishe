@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>用户管理</title>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" th:href="@{http://cdn.staticfile.org/layui/2.6.4/css/layui.css}" media="all" />
+<link rel="stylesheet" href="/resources/css/public.css" media="all" />
+<link rel="stylesheet" href="/resources/layui_ext/dtree/dtree.css" media="all" />
+<link rel="stylesheet" href="/resources/layui_ext/dtree/font/dtreefont.css" media="all" />
+
+</head>
+<body class="childrenBody">
+<!-- 查询条件开始 -->
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 5px;">
+  <legend>查询条件</legend>
+</fieldset>
+<blockquote class="layui-elem-quote">
+	<form action="" method="post" id="searchFrm" lay-filter="searchFrm" class="layui-form layui-form-pane">
+		<div class="layui-form-item">
+		    <div class="layui-inline">
+		      <label class="layui-form-label">用户名称</label>
+		      <div class="layui-input-inline">
+		        <input type="text" name="username"    autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		    <div class="layui-inline">
+		      <label class="layui-form-label">真实名称</label>
+		      <div class="layui-input-inline">
+		      <input type="text" name="realname"    autocomplete="off" class="layui-input">
+		      </div>
+		    </div>
+		  </div>
+		  <div class="layui-form-item">
+		      <div class="layui-input-block" style="text-align: center;">
+		      	<button type="button" class="layui-btn" lay-submit="" lay-filter="doSearch"><span class="layui-icon layui-icon-search"></span>查询</button>
+      			<button type="reset"  class="layui-btn layui-btn-warm"><span class="layui-icon layui-icon-refresh-1"></span>重置</button>
+		      </div>
+		  </div>
+	</form>
+</blockquote>
+<!-- 查询条件结束-->
+
+
+<!-- 数据表格开始 -->
+<div>
+	<table class="layui-hide" id="userTable" lay-filter="userTable"></table>
+	<div id="userToolBar" style="display: none;">
+		<button type="button" lay-event="add" class="layui-btn layui-btn-sm"><span class="layui-icon layui-icon-add-1"></span>添加用户</button>
+	</div>
+	
+	<div id="userRowBar" style="display: none;">
+		<button type="button" lay-event="update" class="layui-btn layui-btn-sm"><span class="layui-icon layui-icon-edit"></span>更新</button>
+		<button type="button" lay-event="delete" class="layui-btn layui-btn-sm layui-btn-danger"><span class="layui-icon layui-icon-delete"></span>删除</button>
+		<button type="button" lay-event="resetPwd" class="layui-btn layui-btn-sm"><span class="layui-icon layui-icon-edit"></span>重置密码</button>
+		<button type="button" lay-event="selectRole" class="layui-btn layui-btn-sm layui-btn-danger"><span class="layui-icon layui-icon-delete"></span>分配角色</button>
+	</div>
+</div>
+
+<!-- 数据表格结束 -->
+
+<!-- 添加和修改的弹出层开始 -->
+<div style="display: none;padding: 5px" id="addOrUpdateDiv">
+	<form action="" method="post" class="layui-form layui-form-pane" id="dataFrm" lay-filter="dataFrm">
+		<div class="layui-col-md3 layui-col-xs5">
+			<div class="layui-upload-list thumbBox mag0 magt3">
+				<input type="hidden" name="uimage" id="uimage" value="images/defaultuimage.png">
+				<img class="layui-upload-img thumbImg" src="/file/showImageByPath?path=images/defaultuimage.png">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<div class="layui-inline">
+			    <label class="layui-form-label">真实名称</label>
+			    <div class="layui-input-inline">
+		      		<input type="text" name="realname" id="realname" lay-verify="required" autocomplete="off" placeholder="请输入真实姓名" class="layui-input">
+			    </div>
+		    </div>
+		    <div class="layui-inline">
+			   <label class="layui-form-label">用户名称</label>
+		    	<div class="layui-input-inline">
+		      		<input type="text" name="username" id="username" lay-verify="required"  autocomplete="off" placeholder="请输入用户名称" class="layui-input">
+		   		</div>
+		    </div>
+	 	</div>
+
+<!-- 	   <div class="layui-form-item">-->
+<!--		    <label class="layui-form-label">用户地址</label>-->
+<!--		    <div class="layui-input-block">-->
+<!--		      		<input type="text" name="address"  autocomplete="off" placeholder="请输入用户用地址" class="layui-input">-->
+<!--		    </div>-->
+<!-- 	   </div>-->
+		<div class="layui-form-item">
+		    <label class="layui-form-label">用户邮箱</label>
+		    <div class="layui-input-block">
+				<input type="text" name="email"  autocomplete="off" placeholder="请输入用户邮箱" class="layui-input">
+		    </div>
+ 	   </div>
+	  <div class="layui-form-item">
+	    <div class="layui-inline">
+	      <label class="layui-form-label">用户性别</label>
+	      <div class="layui-input-inline">
+	        <input type="radio" name="sex" value="1" title="男" checked="">
+	        <input type="radio" name="sex" value="0" title="女" >
+	      </div>
+	    </div>
+	    <div class="layui-inline">
+	      <label class="layui-form-label">是否可用</label>
+	      <div class="layui-input-inline">
+	        <input type="radio" name="available" value="1" title="可用" checked="">
+	        <input type="radio" name="available" value="0" title="不可用" >
+	      </div>
+	    </div>
+	  </div>
+ 	   <div class="layui-form-item">
+		    <div class="layui-input-block" style="text-align: center;">
+		      	<button type="button" class="layui-btn" lay-submit="" lay-filter="doSubmit" ><span class="layui-icon layui-icon-add-1"></span>提交</button>
+      			<button type="reset"  class="layui-btn layui-btn-warm"><span class="layui-icon layui-icon-refresh-1"></span>重置</button>
+		     </div>
+ 	   </div>
+	</form>
+</div>
+<!-- 添加和修改的弹出层结束 -->
+
+
+<!-- 用户分配角色弹出层  开始 -->
+<div style="display: none;padding: 5px" id="selectUserRoleDiv">
+	<table class="layui-hide" id="roleTable" lay-filter="roleTable"></table>
+</div>
+
+
+<!-- 用户分配角色弹出层  结束 -->
+
+
+<script type="text/javascript" src="/resources/layui/layui.js"></script>
+<script type="text/javascript">
+var tableIns;
+layui.extend({
+    dtree: '/resources/layui_ext/dtree/dtree'   // {/}的意思即代表采用自有路径，即不跟随 base 路径
+  }).use(['jquery','form','table','layer','dtree','upload'],function(){
+		var $=layui.jquery;
+		var form=layui.form;
+		var table=layui.table;
+		var layer=layui.layer;
+		var dtree=layui.dtree;
+		var upload=layui.upload;
+		//加载 数据
+		 tableIns=table.render({
+			 elem: '#userTable'
+		    ,url:'/user/loadAllUser'
+		    ,toolbar: '#userToolBar' //开启头部工具栏，并为其绑定左侧模板
+		    ,title: '用户数据表'
+		    ,height:'full-250'
+		    ,page: true
+		    ,cols: [ [
+		      {field:'id', title:'ID',align:'center',width:'60'}
+		      ,{field:'username', title:'用户姓名',align:'center',width:'100'}
+		      ,{field:'realname', title:'真实名称',align:'center',width:'100'}
+		      ,{field:'sex', title:'性别',align:'center',width:'80',templet:function(d){
+		    	  return d.sex==1?'<font color=blue>男</font>':'<font color=red>女</font>';
+		      }},
+		      ,{field:'email', title:'用户邮箱',align:'center',width:'165'}
+		      ,{field:'createtime', title:'创建时间',align:'center',width:'220'}
+		      ,{field:'uimage', title:'用户头像',align:'center',width:'100', templet:function(d){
+						 return '<img width=30 height=30 src=/file/showImageByPath?path='+d.uimage+ ' />';
+					 }}
+		      , {field:'ordernum', title:'排序码',align:'center',width:'100'},
+				 {field:'available', title:'是否可用',align:'center',width:'100',templet:function(d){
+		    	  return d.available==1?'<font color=blue>可用</font>':'<font color=red>不可用</font>';
+		      }},
+		      {fixed: 'right', title:'操作', toolbar: '#userRowBar',align:'center',width:'400'}
+		    ] ]
+		    ,done: function(res, curr, count){ //处理删除某一页最后一条数据的BUG
+		        if(res.data.length==0&&curr!=1){
+		        	tableIns.reload({
+		        		page:{
+		        			curr:(curr-1)
+		        		}
+		        	});
+		        }
+		      }
+		});
+		
+		//模糊查询
+		form.on("submit(doSearch)",function(data){
+			tableIns.reload({
+				where:data.field,
+				page:{
+					curr:1
+				}
+			});
+			return false;
+		});
+
+		//监听工具条的事件
+		table.on("toolbar(userTable)",function(obj){
+			 switch(obj.event){
+			    case 'add':
+			     openAddLayer();
+			    break;
+			  };
+		});
+
+		//监听行工具条的事件
+		table.on("tool(userTable)",function(obj){
+			  var data = obj.data; //获得当前行数据
+			 switch(obj.event){
+			    case 'update':
+			   		openUpdateUserLayer(data);
+			    break;
+			    case 'delete':
+			   		deleteUser(data);
+			    break;
+			    case 'resetPwd':
+			    	resetPwd(data);
+			    break;
+			    case 'selectRole':
+			    	selectRole(data);
+			    break;
+			  };
+		});
+
+		var mainIndex;
+		var url;
+		//打开添加的弹出层
+		function openAddLayer(){
+			mainIndex=layer.open({
+				type:1,
+				content:$("#addOrUpdateDiv"),
+				area:['800px','600px'],
+				title:'添加用户',
+				success:function(){
+					$("#dataFrm")[0].reset();
+					url="/user/addUser";
+					//初始化排序码
+					$.get("/user/loadUserMaxOrderNum",function(res){
+						$("#ordernum").val(res.value);
+					});
+
+					form.render("select");
+				}
+			});
+		}
+
+		//打开修改的弹出层
+		function openUpdateUserLayer(data){
+			mainIndex=layer.open({
+				type:1,
+				content:$("#addOrUpdateDiv"),
+				area:['800px','600px'],
+				title:'修改用户',
+				success:function(){
+					$("#dataFrm")[0].reset();
+					//装载新的数据
+					form.val("dataFrm",data);
+					url="/user/updateUser?id="+data.id;
+					form.render("select");
+				}
+			});
+		}
+
+
+		// 添加修改用户弹出层提交按钮
+		form.on("submit(doSubmit)",function(data){
+			 $.post(url,data.field,function(res){
+					if(res.code==200){
+						tableIns.reload();
+					}
+					layer.msg(res.msg);
+					layer.close(mainIndex);
+				})
+			return false;
+		})
+
+
+		//删除用户
+		function deleteUser(data){
+			layer.confirm('你确定要删除【'+data.realname+'】这条用户吗?', {icon: 3, title:'提示'}, function(index){
+				$.post("/user/deleteUser",{id:data.id},function(res){
+					if(res.code==200){
+						tableIns.reload();
+					}
+					layer.msg(res.msg);
+				})
+			   layer.close(index);
+			});
+		}
+
+
+		//重置密码
+		function resetPwd(data){
+			layer.confirm('你确定要重置【'+data.realname+'】这个用户密码吗?', {icon: 3, title:'提示'}, function(index){
+				$.post("/user/resetPwd",{id:data.id},function(res){
+					layer.msg(res.msg);
+				})
+			   layer.close(index);
+			});
+		}
+
+
+
+		//打开分配角色的弹出层
+		function selectRole(data){
+			mainIndex=layer.open({
+				type:1,
+				content:$("#selectUserRoleDiv"),
+				area:['800px','600px'],
+				title:'分配【'+data.realname+'】的角色',
+				btn: ['<span class=layui-icon>&#xe605;确认分配</span>', '<span class=layui-icon>&#x1006;关闭窗口</span>'],
+			    yes: function(index, layero){
+			    	var checkStatus = table.checkStatus('roleTable');
+			    	var params="uid="+data.id;
+			    	$.each(checkStatus.data,function(index,item){
+			    		params+="&ids="+item.id;
+			    	});
+			    	$.post("/user/saveUserRole",params,function(res){
+			    		layer.msg(res.msg);
+			    	})
+			    },
+				// 关闭窗口按钮
+			    btn2: function(index, layero){
+					//return false;开启该代码可禁止点击该按钮关闭
+			    },
+			    btnAlign: 'c',
+				success:function(){
+					initRoleTable(data);
+
+				}
+
+			});
+
+		}
+		var roleTableIns;
+		//初始化角色列表
+		function initRoleTable(data){
+			roleTableIns=table.render({
+				 elem: '#roleTable'
+			    ,url:'/user/initRoleByUserId'
+			    ,where:{
+			    	id:data.id
+			    }
+			    ,cols: [ [
+			       {type:'checkbox',align:'center'}
+			      ,{field:'id', title:'ID',align:'center'}
+			      ,{field:'name', title:'角色名称',align:'center'}
+			      ,{field:'remark', title:'角色备注',align:'center'}
+			    ] ]
+			});
+		}
+
+
+			//文件上传
+			upload.render({
+				elem: '.thumbBox',
+				url: '/file/uploadFile',
+				acceptMime:'image/*',
+				field:'mf',
+				method : "post",  //此处是为了演示之用，实际使用中请将此删除，默认用post方式提交
+				done: function(res, index, upload){
+					var path=res.path;
+					$('.thumbImg').attr('src','/file/showImageByPath?path='+path);
+					$('.thumbBox').css("background","#A9A9A9");
+					$("#goodsimg").val(path);//给隐藏域赋值
+				}
+			});
+
+
+			function getImage(url, callback){
+				let img = new Image();
+				img.src = url;
+				if(img.complete){
+					callback(img.width, img.height);
+				}else{
+					img.onload = function(){
+						callback(img.width, img.height);
+					}
+				}
+			}
+
+			function showBigImage(url) {
+				getImage(url, function(w, h){
+					let widht = $(window).width() * 0.9;
+					let height = $(window).height() * 0.9;
+					if (w > h) {
+						widht = widht > w ? w : widht;
+						height = widht * h/w;
+					} else {
+						height = height > h ? h : height;
+						widht = height * w/h;
+					}
+					layer.open({
+						type: 1,
+						title: false,
+						closeBtn: 0,
+						shadeClose: true,
+						area: [widht + 'px', height + 'px'],
+						content: '<img src="' + url + '" οnclick="window.open(this.src)" style="max-width: ' + widht + 'px;max-height: ' + height + 'px;cursor:pointer;"/>'
+					});
+				});
+			}
+
+			// 使用   ,form img
+			$(document).on('click', "table img", function () {
+				showBigImage($(this).attr("src"));
+			});
+
+
+
+
+
+
+
+
+
+
+	});
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+16:13:28.078 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Starting BisheApplication using Java 1.8.0_77 on LAPTOP-QKPQUROD with PID 21436 (D:\Test-biyesheji\bishe\target\classes started by 浪漫 in D:\Test-biyesheji)
+16:13:28.078 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - No active profile set, falling back to default profiles: default
+16:13:28.125 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:13:28.125 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:13:28.906 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:13:28.906 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:13:28.937 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 23 ms. Found 0 Redis repository interfaces.
+16:13:29.187 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.springboot.bishe.config.shiro.shiroConfig$$EnhancerBySpringCGLIB$$81f14795] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:29.203 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'UserRealm' of type [com.springboot.bishe.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:29.296 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:29.296 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:29.296 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:13:29.499 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:13:29.515 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:13:29.515 [restartedMain] === INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:13:29.515 [restartedMain] === INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+16:13:29.515 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+16:13:29.515 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:13:29.515 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:13:29.531 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+16:13:29.671 [restartedMain] === INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:13:29.671 [restartedMain] === INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1546 ms
+16:13:29.702 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Servlet statViewServlet was not registered (possibly already registered?)
+16:13:29.702 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Filter webStatFilter was not registered (possibly already registered?)
+16:13:30.749 [restartedMain] === INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:13:30.827 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:13:30.858 [restartedMain] === INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:13:31.239 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+16:13:31.239 [restartedMain] === INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:13:31.239 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+16:13:31.239 [restartedMain] === INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+16:13:31.239 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:13:31.239 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+16:13:31.239 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+16:13:31.239 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6479db66
+16:13:31.254 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:13:31.431 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:13:31.447 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:13:31.447 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+16:13:31.463 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+16:13:31.478 [restartedMain] === INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+16:13:31.494 [restartedMain] === INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+16:13:31.494 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+16:13:31.494 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Started BisheApplication in 3.724 seconds (JVM running for 5.042)
+16:14:38.924 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Starting BisheApplication using Java 1.8.0_77 on LAPTOP-QKPQUROD with PID 15968 (D:\Test-biyesheji\bishe\target\classes started by 浪漫 in D:\Test-biyesheji)
+16:14:38.939 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - No active profile set, falling back to default profiles: default
+16:14:39.002 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:14:39.002 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:14:40.095 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:14:40.095 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:14:40.126 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+16:14:40.376 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.springboot.bishe.config.shiro.shiroConfig$$EnhancerBySpringCGLIB$$aed16e9f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:14:40.392 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'UserRealm' of type [com.springboot.bishe.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:14:40.470 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:14:40.486 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:14:40.501 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:14:40.767 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:14:40.782 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:14:40.782 [restartedMain] === INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:14:40.782 [restartedMain] === INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+16:14:40.782 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+16:14:40.782 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:14:40.782 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:14:40.782 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+16:14:40.954 [restartedMain] === INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:14:40.954 [restartedMain] === INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1952 ms
+16:14:40.986 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Servlet statViewServlet was not registered (possibly already registered?)
+16:14:40.986 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Filter webStatFilter was not registered (possibly already registered?)
+16:14:41.642 [restartedMain] === INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:14:41.704 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:14:41.735 [restartedMain] === INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:14:42.097 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+16:14:42.097 [restartedMain] === INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:14:42.097 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+16:14:42.097 [restartedMain] === INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+16:14:42.097 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:14:42.097 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+16:14:42.097 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+16:14:42.097 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@4b8698e0
+16:14:42.112 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:14:42.301 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:14:42.304 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:14:42.304 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+16:14:42.320 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+16:14:42.351 [restartedMain] === INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+16:14:42.367 [restartedMain] === INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+16:14:42.367 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+16:14:42.367 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Started BisheApplication in 3.955 seconds (JVM running for 5.425)
+16:20:01.638 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Starting BisheApplication using Java 1.8.0_77 on LAPTOP-QKPQUROD with PID 21552 (D:\Test-biyesheji\bishe\target\classes started by 浪漫 in D:\Test-biyesheji)
+16:20:01.638 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - No active profile set, falling back to default profiles: default
+16:20:01.699 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:20:01.699 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:20:02.466 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:20:02.466 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:20:02.497 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+16:20:02.735 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.springboot.bishe.config.shiro.shiroConfig$$EnhancerBySpringCGLIB$$8ef81787] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:20:02.766 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'UserRealm' of type [com.springboot.bishe.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:20:02.835 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:20:02.851 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:20:02.851 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:20:03.052 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:20:03.067 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:20:03.067 [restartedMain] === INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:20:03.067 [restartedMain] === INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+16:20:03.067 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+16:20:03.067 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:20:03.067 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:20:03.067 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+16:20:03.221 [restartedMain] === INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:20:03.221 [restartedMain] === INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1522 ms
+16:20:03.252 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Servlet statViewServlet was not registered (possibly already registered?)
+16:20:03.252 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Filter webStatFilter was not registered (possibly already registered?)
+16:20:03.901 [restartedMain] === INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:20:03.954 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:20:03.985 [restartedMain] === INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:20:04.302 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+16:20:04.317 [restartedMain] === INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:20:04.317 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+16:20:04.317 [restartedMain] === INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+16:20:04.317 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:20:04.317 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+16:20:04.317 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+16:20:04.317 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@3e453914
+16:20:04.324 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskScheduler - Initializing ExecutorService 'taskScheduler'
+16:20:04.487 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:20:04.502 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:20:04.502 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+16:20:04.524 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+16:20:04.556 [restartedMain] === INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+16:20:04.556 [restartedMain] === INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+16:20:04.556 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+16:20:04.571 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Started BisheApplication in 3.23 seconds (JVM running for 4.584)
+16:21:36.098 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Starting BisheApplication using Java 1.8.0_77 on LAPTOP-QKPQUROD with PID 24040 (D:\Test-biyesheji\bishe\target\classes started by 浪漫 in D:\Test-biyesheji)
+16:21:36.098 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - No active profile set, falling back to default profiles: default
+16:21:36.145 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16:21:36.145 [restartedMain] === INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16:21:36.931 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+16:21:36.931 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+16:21:36.963 [restartedMain] === INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 24 ms. Found 0 Redis repository interfaces.
+16:21:37.217 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'shiroConfig' of type [com.springboot.bishe.config.shiro.shiroConfig$$EnhancerBySpringCGLIB$$ad3c8043] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:21:37.248 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'UserRealm' of type [com.springboot.bishe.config.shiro.UserRealm] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:21:37.317 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeCookie' of type [org.apache.shiro.web.servlet.SimpleCookie] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:21:37.317 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'rememberMeManager' of type [org.apache.shiro.web.mgt.CookieRememberMeManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:21:37.333 [restartedMain] === INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'securityManager' of type [org.apache.shiro.web.mgt.DefaultWebSecurityManager] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+16:21:37.549 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16:21:37.549 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16:21:37.549 [restartedMain] === INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16:21:37.549 [restartedMain] === INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.44]
+16:21:37.549 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.23] using APR version [1.7.0].
+16:21:37.549 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+16:21:37.549 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+16:21:37.564 [restartedMain] === INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1c  28 May 2019]
+16:21:37.749 [restartedMain] === INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16:21:37.749 [restartedMain] === INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1604 ms
+16:21:37.784 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Servlet statViewServlet was not registered (possibly already registered?)
+16:21:37.792 [restartedMain] === INFO  o.s.b.web.servlet.RegistrationBean - Filter webStatFilter was not registered (possibly already registered?)
+16:21:38.471 [restartedMain] === INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+16:21:38.540 [restartedMain] === INFO  o.s.s.c.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+16:21:38.556 [restartedMain] === INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16:21:38.873 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Using default implementation for ThreadExecutor
+16:21:38.888 [restartedMain] === INFO  o.quartz.core.SchedulerSignalerImpl - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+16:21:38.888 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Quartz Scheduler v.2.3.1 created.
+16:21:38.888 [restartedMain] === INFO  org.quartz.simpl.RAMJobStore - RAMJobStore initialized.
+16:21:38.888 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+16:21:38.888 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+16:21:38.888 [restartedMain] === INFO  org.quartz.impl.StdSchedulerFactory - Quartz scheduler version: 2.3.1
+16:21:38.888 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@1752ab9
+16:21:39.058 [restartedMain] === INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16:21:39.073 [restartedMain] === INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16:21:39.073 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Context refreshed
+16:21:39.089 [restartedMain] === INFO  s.d.s.w.p.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+16:21:39.104 [restartedMain] === INFO  s.d.s.w.s.ApiListingReferenceScanner - Scanning for api listing references
+16:21:39.120 [restartedMain] === INFO  o.s.s.quartz.SchedulerFactoryBean - Starting Quartz Scheduler now
+16:21:39.120 [restartedMain] === INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED started.
+16:21:39.126 [restartedMain] === INFO  c.springboot.bishe.BisheApplication - Started BisheApplication in 3.397 seconds (JVM running for 4.693)
