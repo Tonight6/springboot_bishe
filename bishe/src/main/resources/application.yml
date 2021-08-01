@@ -1,9 +1,10 @@
 
 #数据库连接配置
 spring:
-#  redis:
-#    host: 192.168.111.129
-#    port: 6379
+  redis:
+    host: 192.168.111.130
+    port: 6379
+    database: 0
   datasource:
     #用户名
     username: "root2"
@@ -54,8 +55,8 @@ mybatis-plus:
   mapper-locations:
   - classpath:Mapper/*Mapper.xml
 #springboot+mybatis-plus 两种方式打印sql语句
-#  configuration:
-#        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  configuration:
+        log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #  global-config:8
 #    db-config:
 #      id-type: auto

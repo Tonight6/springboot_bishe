@@ -12,7 +12,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-@Component
+//@Component
 //@EnableScheduling  //开启定时任务
 public class RecycleTempFileTask {
 

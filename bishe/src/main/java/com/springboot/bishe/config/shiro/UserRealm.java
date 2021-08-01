@@ -61,7 +61,7 @@ public class UserRealm extends AuthorizingRealm {
         User user=activerUser.getUser();
         List<String> permissions = activerUser.getPermissions();
         System.out.println(permissions + "permissions=-=-==--------------------");
-        if(user.getType()== Constast.USER_TYPE_SUPER) {
+        if(user.getType() == Constast.USER_TYPE_SUPER) {
             authorizationInfo.addStringPermission("*:*");
         }else {
             if(null!=permissions&&permissions.size()>0) {
@@ -131,9 +131,10 @@ public class UserRealm extends AuthorizingRealm {
             //放到
             activerUser.setPermissions(percodes);
 
-            // 盐加密次数为1
-            System.out.println(activerUser + "activerUser================");
-
+            //SimpleAuthenticationInfo 验证密码
+            //第一个参数是userName或者user对象。返回给subject.login(token);方法的参数
+            //第二个参数从数据库中获取的password
+            //第三个参数是realm，即当前realm的名称
             return new SimpleAuthenticationInfo(activerUser, user.getPassword(),
                     this.getName());
         }

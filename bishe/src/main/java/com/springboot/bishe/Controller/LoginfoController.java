@@ -11,6 +11,7 @@ import com.springboot.bishe.service.LoginfoService;
 import com.springboot.bishe.vo.LoginfoVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +32,9 @@ public class LoginfoController {
 	/**
 	 * 全查询
 	 */
+	//@Cacheable注解适用于查询，@CachePut适用于修改和新增，@CacheEvict则适用于删除。
 	@RequestMapping("loadAllLoginfo")
+	@Cacheable(value = "Loginfo",keyGenerator = "keyGenerator")
 	public DataGridView loadAllLoginfo(LoginfoVo loginfoVo) {
 		IPage<Loginfo> page=new Page<>(loginfoVo.getPage(), loginfoVo.getLimit());
 		QueryWrapper<Loginfo> queryWrapper=new QueryWrapper<>();

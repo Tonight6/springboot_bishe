@@ -10,6 +10,8 @@ import com.springboot.bishe.service.CustomerService;
 import com.springboot.bishe.vo.CustomerVo;
 import io.swagger.annotations.Api;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -48,6 +50,7 @@ public class CustomerController {
 	 * 添加
 	 */
 	@RequestMapping("addCustomer")
+
 	public DataGridView addCustomer(CustomerVo customerVo) {
 		try {
 			this.customerService.save(customerVo);

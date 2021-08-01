@@ -25,6 +25,7 @@ import org.apache.shiro.subject.Subject;
 import org.apache.shiro.util.ByteSource;
 import org.apache.shiro.web.util.WebUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -86,6 +87,7 @@ public class LoginController {
      */
     @PostMapping("login")
     @ResponseBody
+    @Cacheable(value = "login",keyGenerator = "keyGenerator")
     public DataGridView verifyLogin(String username,String password,String captcha,boolean remember,HttpServletRequest request) {
         DataGridView dataGridView = new DataGridView();
         System.out.println(captcha);
@@ -119,15 +121,14 @@ public class LoginController {
                 entity.setLogintime(new Date());
                 loginfoService.save(entity);
 
-
+                dataGridView.setMsg("欢迎回来!");
                 dataGridView.setCode(200);
                 dataGridView.setData("/index.html");
                 return dataGridView;
-            } catch (AuthenticationException e) {
-                e.printStackTrace();
-                dataGridView.setCode(-1);
-                dataGridView.setMsg("登陆失败,用户名或密码不正确");
-                return dataGridView;
+            }catch (UnknownAccountException e){
+                return  DataGridView.fail("用户名不存在");
+            }catch (IncorrectCredentialsException e){
+                return  DataGridView.fail("密码错误");
             }
 
     }
@@ -139,9 +140,10 @@ public class LoginController {
     @RequestMapping("login.html")
     public String loginout(Model model){
         Subject subject = SecurityUtils.getSubject();
+        subject.getSession().removeAttribute("user");
         subject.logout();
         model.addAttribute("msg","安全退出！");
-        return "login";
+        return "redirect:/";
     }
 
 

@@ -16,6 +16,7 @@ import com.springboot.bishe.domain.User;
 import com.springboot.bishe.service.RoleService;
 import com.springboot.bishe.service.UserService;
 import com.springboot.bishe.vo.UserVo;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.crypto.hash.Md5Hash;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -68,11 +69,12 @@ public class UserController {
     }
 
     /**
-     *  用户修改密码
+     *  用户重置密码
      * @param id
      * @return
      */
     @RequestMapping("resetPwd")
+    @RequiresRoles( "user:resetPwd")
     public  DataGridView resetPwd(Integer id){
         try{
             User user = new User();

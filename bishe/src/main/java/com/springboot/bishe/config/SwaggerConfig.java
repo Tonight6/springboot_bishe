@@ -28,7 +28,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.springboot.bishe.service"))
+                .apis(RequestHandlerSelectors.basePackage("com.springboot.bishe.Controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -38,8 +38,8 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("eboot-api文档")
-                .description("更多信息，请访问https://www.jianshu.com/u/3979cb11f079")
-                .termsOfServiceUrl("https://gitee.com/QuanZhanZhiLu/easy-boot")
+                .description("更多信息，请访问https://www.yuque.com/langman-boj2p/ib79ai")
+                .termsOfServiceUrl("https://www.baidu.com")
                 .version("1.0")
                 .build();
     }

@@ -28,7 +28,7 @@ public class MyMvcConfig implements WebMvcConfigurer {
 //        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
 //        registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
 
-       // 放行swagger2 ui 界面的跳转请求
+        //放行swagger2 ui 界面的跳转请求
 //        registry.addResourceHandler("/**").addResourceLocations("classpath:/META-INF/resources/").setCachePeriod(0);
 //        registry.addResourceHandler("/webjars/**")
 //                .addResourceLocations("classpath:/META-INF/resources/webjars/");

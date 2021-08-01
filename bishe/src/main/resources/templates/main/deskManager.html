@@ -94,30 +94,33 @@
         })
 
 
+
+
         //最新文章列表
         $.get("/notice/loadAllNotice", function (data) {
+            window.articleList = data.data;
             var hotNewsHtml = '';
-            window.articleList = data.data
-			console.log(data.data[0].toString())
-            for (var i = 0; i < 5; i++) {
+            let len = window.articleList.length
+            if (len > 5) {
+                len = 5
+            }
+            for (var i = 0; i < len; i++) {
                 // es6 拼接方式
                 hotNewsHtml += `
 							<tr onclick="chakan(${i})">
-								<td align="left"><a>${data.data[i].title}</a></td>
+								<td align="left"><a>${window.articleList[i].title}</a></td>
 								<td>${data.data[i].createtime.substring(0,10)}</td>
 							</tr>
 						`;
             }
-
             $(".hot_news").html(hotNewsHtml);
-            $(".userAll span").text(data.length);
         })
 
 
     })
 
 	chakan = function(index) {
-		var data = window.articleList[index]
+		var data = window.articleList[index];
 		layer.open({
 			type: 1,
 			content: $("#showNoticeDiv"),

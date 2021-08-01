@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.springboot.bishe.Mapper.RoleMapper;
 import com.springboot.bishe.domain.Role;
 import com.springboot.bishe.service.RoleService;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -55,6 +56,7 @@ public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements Ro
      * 查询当前用户拥有的角色ID集合
      */
     @Override
+    @Cacheable(value = "queryUserRoleIdsByUid",keyGenerator = "keyGenerator")
     public List<Integer> queryUserRoleIdsByUid(Integer id) {
         return this.getBaseMapper().queryUserRoleIdsByUid(id);
     }
